@@ -15,3 +15,13 @@ C:\Users\Lukas\Documents\_DEV\DatabaseDocumentationGenerator\DatabaseDocumentati
 C:\Users\Lukas\Documents\_DEV\DatabaseDocumentationGenerator\DatabaseDocumentationGenerator\DatabaseDocumentationGenerator\obj\Debug\net6.0-windows\DatabaseDocumentationGenerator.genruntimeconfig.cache
 C:\Users\Lukas\Documents\_DEV\DatabaseDocumentationGenerator\DatabaseDocumentationGenerator\DatabaseDocumentationGenerator\obj\Debug\net6.0-windows\ref\DatabaseDocumentationGenerator.dll
 C:\Users\Lukas\Documents\_DEV\DatabaseDocumentationGenerator\DatabaseDocumentationGenerator\DatabaseDocumentationGenerator\obj\Debug\net6.0-windows\DatabaseDocumentationGenerator.DatabaseDocumentationGenerator.resources
+C:\Users\Lukas\Documents\_DEV\DatabaseDocumentationGenerator\DatabaseDocumentationGenerator\DatabaseDocumentationGenerator\bin\Debug\net6.0-windows\DinkToPdf.dll
+C:\Users\Lukas\Documents\_DEV\DatabaseDocumentationGenerator\DatabaseDocumentationGenerator\DatabaseDocumentationGenerator\bin\Debug\net6.0-windows\PdfSharpCore.dll
+C:\Users\Lukas\Documents\_DEV\DatabaseDocumentationGenerator\DatabaseDocumentationGenerator\DatabaseDocumentationGenerator\bin\Debug\net6.0-windows\ICSharpCode.SharpZipLib.dll
+C:\Users\Lukas\Documents\_DEV\DatabaseDocumentationGenerator\DatabaseDocumentationGenerator\DatabaseDocumentationGenerator\bin\Debug\net6.0-windows\SixLabors.Fonts.dll
+C:\Users\Lukas\Documents\_DEV\DatabaseDocumentationGenerator\DatabaseDocumentationGenerator\DatabaseDocumentationGenerator\bin\Debug\net6.0-windows\SixLabors.ImageSharp.dll
+C:\Users\Lukas\Documents\_DEV\DatabaseDocumentationGenerator\DatabaseDocumentationGenerator\DatabaseDocumentationGenerator\bin\Debug\net6.0-windows\de\PdfSharpCore.resources.dll
+C:\Users\Lukas\Documents\_DEV\DatabaseDocumentationGenerator\DatabaseDocumentationGenerator\DatabaseDocumentationGenerator\obj\Debug\net6.0-windows\DatabaseDocumentationGenerator.csproj.CopyComplete
+C:\Users\Lukas\Documents\_DEV\DatabaseDocumentationGenerator\DatabaseDocumentationGenerator\DatabaseDocumentationGenerator\bin\Debug\net6.0-windows\libwkhtmltox.dll
+C:\Users\Lukas\Documents\_DEV\DatabaseDocumentationGenerator\DatabaseDocumentationGenerator\DatabaseDocumentationGenerator\bin\Debug\net6.0-windows\libwkhtmltox.dylib
+C:\Users\Lukas\Documents\_DEV\DatabaseDocumentationGenerator\DatabaseDocumentationGenerator\DatabaseDocumentationGenerator\bin\Debug\net6.0-windows\libwkhtmltox.so

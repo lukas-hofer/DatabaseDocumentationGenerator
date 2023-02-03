@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "/mvOBPiWUTCArvrQH8Cx/gVUSQCJJ+P7vxuKvMkfelrv06hesmK7W9vnXX0V9zvKyTu4d1WkJIgNfy0OO//Zqw==",
+  "dgSpecHash": "AHMPi8WS64DYXWuxN0xRWt1Mc03UlZK9K+K5TdUj/kjHScmnu5pLZv+JIlY4W55UNJ5PrJlI0R+zwqUHjH4c6g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Lukas\\Documents\\_DEV\\DatabaseDocumentationGenerator\\DatabaseDocumentationGenerator\\DatabaseDocumentationGenerator\\DatabaseDocumentationGenerator.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lukas\\.nuget\\packages\\dinktopdf\\1.0.8\\dinktopdf.1.0.8.nupkg.sha512",
+    "C:\\Users\\Lukas\\.nuget\\packages\\dinktopdfcopydependencies\\1.0.8\\dinktopdfcopydependencies.1.0.8.nupkg.sha512",
     "C:\\Users\\Lukas\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Lukas\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\Lukas\\.nuget\\packages\\microsoft.win32.primitives\\4.0.1\\microsoft.win32.primitives.4.0.1.nupkg.sha512",

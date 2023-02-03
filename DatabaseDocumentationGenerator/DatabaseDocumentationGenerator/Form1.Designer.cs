@@ -32,8 +32,9 @@
             this.DataCatalog = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
             this.buttonSaveCsv = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.buttonCsvToPdf = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.openCreateScriptFile = new System.Windows.Forms.Button();
@@ -97,17 +98,30 @@
             this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel3.ColumnCount = 3;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel3.Controls.Add(this.buttonSaveCsv, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.buttonSaveCsv, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.buttonCsvToPdf, 1, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(394, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(387, 34);
             this.tableLayoutPanel3.TabIndex = 5;
+            // 
+            // buttonSaveCsv
+            // 
+            this.buttonSaveCsv.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.buttonSaveCsv.Location = new System.Drawing.Point(312, 5);
+            this.buttonSaveCsv.Name = "buttonSaveCsv";
+            this.buttonSaveCsv.Size = new System.Drawing.Size(72, 23);
+            this.buttonSaveCsv.TabIndex = 6;
+            this.buttonSaveCsv.Text = "save Csv";
+            this.buttonSaveCsv.UseVisualStyleBackColor = true;
+            this.buttonSaveCsv.Click += new System.EventHandler(this.buttonSaveCsv_Click);
             // 
             // label2
             // 
@@ -118,17 +132,18 @@
             this.label2.Size = new System.Drawing.Size(120, 15);
             this.label2.TabIndex = 2;
             this.label2.Text = "Data Catalog as *.xml";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // buttonSaveCsv
+            // buttonCsvToPdf
             // 
-            this.buttonSaveCsv.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonSaveCsv.Location = new System.Drawing.Point(306, 5);
-            this.buttonSaveCsv.Name = "buttonSaveCsv";
-            this.buttonSaveCsv.Size = new System.Drawing.Size(78, 23);
-            this.buttonSaveCsv.TabIndex = 6;
-            this.buttonSaveCsv.Text = "save Csv";
-            this.buttonSaveCsv.UseVisualStyleBackColor = true;
-            this.buttonSaveCsv.Click += new System.EventHandler(this.buttonSaveCsv_Click);
+            this.buttonCsvToPdf.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.buttonCsvToPdf.Location = new System.Drawing.Point(235, 5);
+            this.buttonCsvToPdf.Name = "buttonCsvToPdf";
+            this.buttonCsvToPdf.Size = new System.Drawing.Size(71, 23);
+            this.buttonCsvToPdf.TabIndex = 7;
+            this.buttonCsvToPdf.Text = "save Pdf";
+            this.buttonCsvToPdf.UseVisualStyleBackColor = true;
+            this.buttonCsvToPdf.Click += new System.EventHandler(this.buttonCsvToPdf_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -234,5 +249,6 @@
         private TableLayoutPanel tableLayoutPanel2;
         private TextBox textboxCsv;
         private Label insertFileName;
+        private Button buttonCsvToPdf;
     }
 }

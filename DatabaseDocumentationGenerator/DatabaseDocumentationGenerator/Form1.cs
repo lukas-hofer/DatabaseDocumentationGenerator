@@ -100,5 +100,27 @@ namespace DatabaseDocumentationGenerator
         {
 
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonCsvToPdf_Click(object sender, EventArgs e)
+        {
+
+            PdfGenerator pdfGenerator = new PdfGenerator();
+            byte[] pdf = pdfGenerator.generatePdfOutOfCsv(this.csv);
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "pdf files (*.pdf)|*.pdf|All files (*.*)|*.*";
+            saveFileDialog.RestoreDirectory = true;
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                File.WriteAllBytes(saveFileDialog.FileName, pdf);
+            }
+
+        }
     }
 }

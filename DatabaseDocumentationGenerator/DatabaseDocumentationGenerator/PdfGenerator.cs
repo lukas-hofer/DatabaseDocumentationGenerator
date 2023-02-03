@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Orientation = DinkToPdf.Orientation;
@@ -15,19 +16,20 @@ namespace DatabaseDocumentationGenerator
         {
             var converter = new BasicConverter(new PdfTools());
 
+            string html = generateHtml(csv);
+
             var doc = new HtmlToPdfDocument()
             {
-                    GlobalSettings = {
+                GlobalSettings = {
                     ColorMode = ColorMode.Color,
-                    Orientation = Orientation.Landscape,
+                    Orientation = Orientation.Portrait,
                     PaperSize = PaperKind.A4Plus,
-                    },
-                    Objects = {
+                },
+                Objects = {
                     new ObjectSettings() {
                         PagesCount = true,
-                        HtmlContent = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consectetur mauris eget ultrices  iaculis. Ut                               odio viverra, molestie lectus nec, venenatis turpis.",
-                        WebSettings = { DefaultEncoding = "utf-8" },
-                        HeaderSettings = { FontSize = 9, Right = "Page [page] of [toPage]", Line = true, Spacing = 2.812 }
+                        HtmlContent = html,
+                        WebSettings = { DefaultEncoding = "utf-8" }
                     }
                 }
             };
@@ -35,6 +37,65 @@ namespace DatabaseDocumentationGenerator
             byte[] pdf = converter.Convert(doc);
 
             return pdf;
+        }
+
+        private string generateHtml(string csv)
+        {
+            string html = $@"
+	            <!DOCTYPE html>
+	            <head>
+		            <style>
+		               table, th, td {{
+                           border: 1px solid;
+                        }} 
+                        table {{
+                              border-collapse: collapse;
+                        }}
+                        td, th {{
+                          padding: 5px;             
+                       }}
+		            </style>
+	            </head>
+	            <body>
+	            ";
+            int tableRow = 0;
+
+            foreach (string row in csv.Split("\r\n"))
+            {
+                //heading
+                if (!row.Contains(";"))
+                {
+                    if (tableRow != 0)
+                    {
+                        html += @"</table>";
+                        tableRow = 0;
+                    }
+                    html += "<h1>" + row + "</h1>";
+                    
+                } else
+                {
+                    if (tableRow == 0)
+                    {
+                        html += @"<table>";
+                    }
+                    string[] colData = row.Split(";");
+
+                    html += "<tr>";
+
+                    foreach (string tableCol in colData)
+                    {
+                        html += ("<td>" + tableCol + "</td>");
+                    }
+
+                    html += "</tr>";
+                    
+
+                    tableRow++;
+                }
+
+            }
+
+            return html;
         }
 
     }

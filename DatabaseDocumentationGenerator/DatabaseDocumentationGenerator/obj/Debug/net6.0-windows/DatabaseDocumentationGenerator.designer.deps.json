@@ -23,6 +23,14 @@
           }
         }
       },
+      "DinkToPdfCopyDependencies/1.0.8": {
+        "runtime": {
+          "lib/netstandard/DinkToPdf.dll": {
+            "assemblyVersion": "1.0.8.0",
+            "fileVersion": "1.0.8.0"
+          }
+        }
+      },
       "Microsoft.NETCore.Platforms/1.1.0": {},
       "Microsoft.NETCore.Targets/1.1.0": {},
       "Microsoft.Win32.Primitives/4.0.1": {
@@ -990,6 +998,13 @@
       "sha512": "sha512-wJDlcNXjQ+OnBFwh3LBeAXgrXqlKl0RsgN60XpxEFbyqzdaG9ASb5HTXQjXQPaBguSCOrGZZESPnpcng34TEkw==",
       "path": "dinktopdf/1.0.8",
       "hashPath": "dinktopdf.1.0.8.nupkg.sha512"
+    },
+    "DinkToPdfCopyDependencies/1.0.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eJeXFfx/tyVG3nzUdNGGjDoKpF+7RqKTw4OE5Zr/afZI9LTtVbtMkGLxNmhdijKN3BlSYdap2CVZN8e4PaEdBA==",
+      "path": "dinktopdfcopydependencies/1.0.8",
+      "hashPath": "dinktopdfcopydependencies.1.0.8.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "type": "package",
