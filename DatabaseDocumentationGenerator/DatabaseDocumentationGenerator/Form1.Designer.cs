@@ -32,11 +32,11 @@
             this.DataCatalog = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.buttonSaveCsv = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.openCreateScriptFile = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.openCreateScriptFile = new System.Windows.Forms.Button();
             this.textboxCreateScripts = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.DataCatalog.SuspendLayout();
@@ -93,25 +93,16 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
-            this.tableLayoutPanel3.Controls.Add(this.button1, 1, 0);
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel3.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.buttonSaveCsv, 1, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(394, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(387, 76);
             this.tableLayoutPanel3.TabIndex = 5;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(328, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "save Csv";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -122,32 +113,32 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Data Catalog as *.xml";
             // 
+            // buttonSaveCsv
+            // 
+            this.buttonSaveCsv.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonSaveCsv.Location = new System.Drawing.Point(270, 26);
+            this.buttonSaveCsv.Name = "buttonSaveCsv";
+            this.buttonSaveCsv.Size = new System.Drawing.Size(78, 23);
+            this.buttonSaveCsv.TabIndex = 6;
+            this.buttonSaveCsv.Text = "save Csv";
+            this.buttonSaveCsv.UseVisualStyleBackColor = true;
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 114F));
-            this.tableLayoutPanel2.Controls.Add(this.openCreateScriptFile, 1, 0);
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.openCreateScriptFile, 1, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(385, 76);
             this.tableLayoutPanel2.TabIndex = 5;
-            // 
-            // openCreateScriptFile
-            // 
-            this.openCreateScriptFile.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.openCreateScriptFile.Location = new System.Drawing.Point(290, 26);
-            this.openCreateScriptFile.Name = "openCreateScriptFile";
-            this.openCreateScriptFile.Size = new System.Drawing.Size(75, 23);
-            this.openCreateScriptFile.TabIndex = 3;
-            this.openCreateScriptFile.Text = "open File";
-            this.openCreateScriptFile.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -157,7 +148,16 @@
             this.label1.Size = new System.Drawing.Size(109, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "Table Create Scripts";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // openCreateScriptFile
+            // 
+            this.openCreateScriptFile.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.openCreateScriptFile.Location = new System.Drawing.Point(270, 26);
+            this.openCreateScriptFile.Name = "openCreateScriptFile";
+            this.openCreateScriptFile.Size = new System.Drawing.Size(75, 23);
+            this.openCreateScriptFile.TabIndex = 3;
+            this.openCreateScriptFile.Text = "open File";
+            this.openCreateScriptFile.UseVisualStyleBackColor = true;
             // 
             // textboxCreateScripts
             // 
@@ -201,7 +201,7 @@
         private Label label1;
         private TableLayoutPanel tableLayoutPanel1;
         private TableLayoutPanel tableLayoutPanel3;
-        private Button button1;
+        private Button buttonSaveCsv;
         private TableLayoutPanel tableLayoutPanel2;
     }
 }
