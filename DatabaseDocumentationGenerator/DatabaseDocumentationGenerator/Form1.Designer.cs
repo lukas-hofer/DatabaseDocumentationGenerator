@@ -39,6 +39,7 @@
             this.openCreateScriptFile = new System.Windows.Forms.Button();
             this.textboxCreateScripts = new System.Windows.Forms.TextBox();
             this.textboxCsv = new System.Windows.Forms.TextBox();
+            this.insertFileName = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.DataCatalog.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -79,13 +80,15 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.12755F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textboxCreateScripts, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textboxCsv, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.textboxCreateScripts, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.textboxCsv, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.insertFileName, 0, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.62175F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.37826F));
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 418);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
@@ -103,14 +106,14 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(387, 76);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(387, 34);
             this.tableLayoutPanel3.TabIndex = 5;
             // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 30);
+            this.label2.Location = new System.Drawing.Point(3, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(120, 15);
             this.label2.TabIndex = 2;
@@ -119,7 +122,7 @@
             // buttonSaveCsv
             // 
             this.buttonSaveCsv.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonSaveCsv.Location = new System.Drawing.Point(306, 26);
+            this.buttonSaveCsv.Location = new System.Drawing.Point(306, 5);
             this.buttonSaveCsv.Name = "buttonSaveCsv";
             this.buttonSaveCsv.Size = new System.Drawing.Size(78, 23);
             this.buttonSaveCsv.TabIndex = 6;
@@ -140,14 +143,14 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(385, 76);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(385, 34);
             this.tableLayoutPanel2.TabIndex = 5;
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 30);
+            this.label1.Location = new System.Drawing.Point(3, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 15);
             this.label1.TabIndex = 1;
@@ -156,23 +159,24 @@
             // openCreateScriptFile
             // 
             this.openCreateScriptFile.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.openCreateScriptFile.Location = new System.Drawing.Point(307, 26);
+            this.openCreateScriptFile.Location = new System.Drawing.Point(307, 5);
             this.openCreateScriptFile.Name = "openCreateScriptFile";
             this.openCreateScriptFile.Size = new System.Drawing.Size(75, 23);
             this.openCreateScriptFile.TabIndex = 3;
             this.openCreateScriptFile.Text = "open File";
             this.openCreateScriptFile.UseVisualStyleBackColor = true;
+            this.openCreateScriptFile.Click += new System.EventHandler(this.openCreateScriptFile_Click);
             // 
             // textboxCreateScripts
             // 
             this.textboxCreateScripts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textboxCreateScripts.Location = new System.Drawing.Point(3, 85);
+            this.textboxCreateScripts.Location = new System.Drawing.Point(3, 63);
             this.textboxCreateScripts.Multiline = true;
             this.textboxCreateScripts.Name = "textboxCreateScripts";
             this.textboxCreateScripts.ReadOnly = true;
-            this.textboxCreateScripts.Size = new System.Drawing.Size(385, 330);
+            this.textboxCreateScripts.Size = new System.Drawing.Size(385, 352);
             this.textboxCreateScripts.TabIndex = 0;
             // 
             // textboxCsv
@@ -180,12 +184,20 @@
             this.textboxCsv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textboxCsv.Location = new System.Drawing.Point(394, 85);
+            this.textboxCsv.Location = new System.Drawing.Point(394, 63);
             this.textboxCsv.Multiline = true;
             this.textboxCsv.Name = "textboxCsv";
             this.textboxCsv.ReadOnly = true;
-            this.textboxCsv.Size = new System.Drawing.Size(387, 330);
+            this.textboxCsv.Size = new System.Drawing.Size(387, 352);
             this.textboxCsv.TabIndex = 6;
+            // 
+            // insertFileName
+            // 
+            this.insertFileName.AutoSize = true;
+            this.insertFileName.Location = new System.Drawing.Point(3, 40);
+            this.insertFileName.Name = "insertFileName";
+            this.insertFileName.Size = new System.Drawing.Size(0, 15);
+            this.insertFileName.TabIndex = 7;
             // 
             // DatabaseDocumentationGenerator
             // 
@@ -220,5 +232,6 @@
         private Button buttonSaveCsv;
         private TableLayoutPanel tableLayoutPanel2;
         private TextBox textboxCsv;
+        private Label insertFileName;
     }
 }
