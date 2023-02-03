@@ -1,8 +1,8 @@
 namespace DatabaseDocumentationGenerator
 {
-    public partial class Form1 : Form
+    public partial class DatabaseDocumentationGenerator : Form
     {
-        public Form1()
+        public DatabaseDocumentationGenerator()
         {
             InitializeComponent();
         }
