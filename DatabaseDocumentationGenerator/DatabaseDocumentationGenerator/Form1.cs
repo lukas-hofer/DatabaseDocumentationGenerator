@@ -24,11 +24,14 @@ namespace DatabaseDocumentationGenerator
 
                     textboxCreateScripts.Text += (line) + "\r\n";
                 }
+
+                textboxCsv.Text = convertToTableCsv();
+                insertFileName.Text = openFileDialog.FileName;
             }
 
-            insertFileName.Text = openFileDialog.FileName;
+            
 
-            textboxCsv.Text = convertToTableCsv();
+            
 
         }
 
@@ -86,13 +89,20 @@ namespace DatabaseDocumentationGenerator
 
         private void buttonSaveCsv_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
-            saveFileDialog.RestoreDirectory = true;
-
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            if (textboxCsv.Text != String.Empty)
             {
-                File.WriteAllText(saveFileDialog.FileName, textboxCsv.Text);
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
+                saveFileDialog.RestoreDirectory = true;
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    File.WriteAllText(saveFileDialog.FileName, textboxCsv.Text);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nothing to save.");
             }
         }
 
@@ -109,17 +119,25 @@ namespace DatabaseDocumentationGenerator
         private void buttonCsvToPdf_Click(object sender, EventArgs e)
         {
 
-            PdfGenerator pdfGenerator = new PdfGenerator();
-            byte[] pdf = pdfGenerator.generatePdfOutOfCsv(this.csv);
-
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "pdf files (*.pdf)|*.pdf|All files (*.*)|*.*";
-            saveFileDialog.RestoreDirectory = true;
-
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            if (textboxCsv.Text != String.Empty)
             {
-                File.WriteAllBytes(saveFileDialog.FileName, pdf);
+                PdfGenerator pdfGenerator = new PdfGenerator();
+                byte[] pdf = pdfGenerator.generatePdfOutOfCsv(this.csv);
+
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "pdf files (*.pdf)|*.pdf|All files (*.*)|*.*";
+                saveFileDialog.RestoreDirectory = true;
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    File.WriteAllBytes(saveFileDialog.FileName, pdf);
+                }
+            } else
+            {
+                MessageBox.Show("Nothing to save");
             }
+
+
 
         }
     }
