@@ -128,6 +128,7 @@
             this.buttonSaveCsv.TabIndex = 6;
             this.buttonSaveCsv.Text = "save Csv";
             this.buttonSaveCsv.UseVisualStyleBackColor = true;
+            this.buttonSaveCsv.Click += new System.EventHandler(this.buttonSaveCsv_Click);
             // 
             // tableLayoutPanel2
             // 
