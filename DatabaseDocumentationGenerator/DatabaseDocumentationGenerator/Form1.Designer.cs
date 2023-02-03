@@ -38,6 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.openCreateScriptFile = new System.Windows.Forms.Button();
             this.textboxCreateScripts = new System.Windows.Forms.TextBox();
+            this.textboxCsv = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.DataCatalog.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -79,6 +80,7 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.textboxCreateScripts, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.textboxCsv, 1, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
@@ -106,8 +108,9 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Location = new System.Drawing.Point(3, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(120, 15);
             this.label2.TabIndex = 2;
@@ -115,8 +118,8 @@
             // 
             // buttonSaveCsv
             // 
-            this.buttonSaveCsv.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonSaveCsv.Location = new System.Drawing.Point(270, 26);
+            this.buttonSaveCsv.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.buttonSaveCsv.Location = new System.Drawing.Point(306, 26);
             this.buttonSaveCsv.Name = "buttonSaveCsv";
             this.buttonSaveCsv.Size = new System.Drawing.Size(78, 23);
             this.buttonSaveCsv.TabIndex = 6;
@@ -142,8 +145,9 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Location = new System.Drawing.Point(3, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 15);
             this.label1.TabIndex = 1;
@@ -151,8 +155,8 @@
             // 
             // openCreateScriptFile
             // 
-            this.openCreateScriptFile.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.openCreateScriptFile.Location = new System.Drawing.Point(270, 26);
+            this.openCreateScriptFile.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.openCreateScriptFile.Location = new System.Drawing.Point(307, 26);
             this.openCreateScriptFile.Name = "openCreateScriptFile";
             this.openCreateScriptFile.Size = new System.Drawing.Size(75, 23);
             this.openCreateScriptFile.TabIndex = 3;
@@ -170,6 +174,18 @@
             this.textboxCreateScripts.ReadOnly = true;
             this.textboxCreateScripts.Size = new System.Drawing.Size(385, 330);
             this.textboxCreateScripts.TabIndex = 0;
+            // 
+            // textboxCsv
+            // 
+            this.textboxCsv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textboxCsv.Location = new System.Drawing.Point(394, 85);
+            this.textboxCsv.Multiline = true;
+            this.textboxCsv.Name = "textboxCsv";
+            this.textboxCsv.ReadOnly = true;
+            this.textboxCsv.Size = new System.Drawing.Size(387, 330);
+            this.textboxCsv.TabIndex = 6;
             // 
             // DatabaseDocumentationGenerator
             // 
@@ -203,5 +219,6 @@
         private TableLayoutPanel tableLayoutPanel3;
         private Button buttonSaveCsv;
         private TableLayoutPanel tableLayoutPanel2;
+        private TextBox textboxCsv;
     }
 }
