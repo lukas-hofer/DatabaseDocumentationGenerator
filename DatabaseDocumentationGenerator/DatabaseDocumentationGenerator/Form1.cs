@@ -8,6 +8,7 @@ namespace DatabaseDocumentationGenerator
         }
 
         string[] createScriptsSql;
+        string csv;
 
         private void openCreateScriptFile_Click(object sender, EventArgs e)
         {
@@ -79,7 +80,7 @@ namespace DatabaseDocumentationGenerator
                 }
             }
 
-
+            this.csv = csv;
             return csv;
         }
 
@@ -93,6 +94,11 @@ namespace DatabaseDocumentationGenerator
             {
                 File.WriteAllText(saveFileDialog.FileName, textboxCsv.Text);
             }
+        }
+
+        private void generatePdf()
+        {
+
         }
     }
 }

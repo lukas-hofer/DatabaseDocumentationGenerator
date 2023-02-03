@@ -1,3 +1,4 @@
+
 namespace DatabaseDocumentationGenerator
 {
     internal static class Program
@@ -12,6 +13,10 @@ namespace DatabaseDocumentationGenerator
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new DatabaseDocumentationGenerator());
+
+
         }
+
+
     }
 }
