@@ -12,11 +12,11 @@ namespace DatabaseDocumentationGenerator
     internal class PdfGenerator
     {
 
-        public byte[] generatePdfOutOfCsv(string csv)
+        public byte[] generateCatalogPdf(List<SqlTable> tables)
         {
             var converter = new BasicConverter(new PdfTools());
 
-            string html = generateHtml(csv);
+            string html = generateHtml(tables);
 
             var doc = new HtmlToPdfDocument()
             {
@@ -39,7 +39,7 @@ namespace DatabaseDocumentationGenerator
             return pdf;
         }
 
-        private string generateHtml(string csv)
+        private string generateHtml(List<SqlTable> tables)
         {
             string html = $@"
 	            <!DOCTYPE html>
@@ -58,45 +58,40 @@ namespace DatabaseDocumentationGenerator
 	            </head>
 	            <body>
 	            ";
-            int tableRow = 0;
 
-            foreach (string row in csv.Split("\r\n"))
+            foreach (SqlTable table in tables)
             {
                 //heading
-                if (!row.Contains(";"))
-                {
-                    if (tableRow != 0)
-                    {
-                        html += @"</table>";
-                        tableRow = 0;
-                    }
-                    html += "<h1>" + row + "</h1>";
-                    
-                } else
-                {
-                    if (tableRow == 0)
-                    {
-                        html += @"<table>";
-                    }
-                    string[] colData = row.Split(";");
 
+                html += "<h1>" + table.name + "</h1>";
+
+                html += "<table>";
+
+                html += @"
+                
+                <tr>
+                <th>Name</th>
+                <th>DataType</th>
+                <th>Nullable</th>
+                </tr>
+    
+                ";
+
+                foreach (SqlTableCol tableCol in table.sqlTableColumns)
+                {
                     html += "<tr>";
-
-                    foreach (string tableCol in colData)
-                    {
-                        html += ("<td>" + tableCol + "</td>");
-                    }
-
+                    html += ("<td>" + tableCol.name + "</td>");
+                    html += ("<td>" + tableCol.datatype + "</td>");
+                    html += ("<td>" + tableCol.nullable + "</td>");
                     html += "</tr>";
-                    
-
-                    tableRow++;
                 }
 
+                html += @"</table>";
             }
-
+            
             return html;
         }
+
 
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseDocumentationGenerator
 {
-    internal class SqlTableRow
+    internal class SqlTableCol
     {
         public string name { get; set; }
         public string datatype { get; set; }

@@ -6,27 +6,28 @@ namespace DatabaseDocumentationGenerator
         {
             InitializeComponent();
         }
-
-        string[] createScriptsSql;
+        
         string csv;
+        List<SqlTable> tables = new List<SqlTable>();
 
         private void openCreateScriptFile_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                createScriptsSql = File.ReadAllLines(openFileDialog.FileName);
+                string[] createScriptsSql = File.ReadAllText(openFileDialog.FileName).Replace("\r\n","").Split(";");
 
 
                 textboxCreateScripts.Text = String.Empty;
                 foreach (string line in createScriptsSql)
                 {
-
                     textboxCreateScripts.Text += (line) + "\r\n";
                 }
 
-                textboxCsv.Text = convertToTableCsv();
                 insertFileName.Text = openFileDialog.FileName;
+                
+                this.tables = convertCreateScripts(createScriptsSql);
+                textboxCsv.Text = createCsv(this.tables);
             }
 
             
@@ -35,23 +36,22 @@ namespace DatabaseDocumentationGenerator
 
         }
 
-
-        private string convertToTableCsv()
+        private List<SqlTable> convertCreateScripts(string[] createScript)
         {
-            string csv = String.Empty;
+            List<SqlTable> tables = new List<SqlTable>();
 
-            foreach (string line in createScriptsSql)
+
+            foreach (string line in createScript)
             {
                 //create Statement
                 if (line.StartsWith("CREATE TABLE"))
                 {
                     string tableName = line.Split("CREATE TABLE ")[1].Split(" ")[0];
-                    csv += tableName + "\r\n";
 
+                    SqlTable table = new SqlTable();
+                    table.name = tableName;
 
                     string[] tableRows = line.Split("(")[1].Split(")")[0].Split(",");
-
-                    csv += "Name;Type;Nullable\r\n";
 
                     foreach (string currentRow in tableRows)
                     {
@@ -67,7 +67,7 @@ namespace DatabaseDocumentationGenerator
                             continue;
                         }
 
-                        string rowName = row.Split(" ")[0];
+                        string colName = row.Split(" ")[0];
                         string dataType = row.Split(" ")[1];
                         bool nullable = true;
 
@@ -76,14 +76,37 @@ namespace DatabaseDocumentationGenerator
                             nullable = false;
                         }
 
-                        csv += (rowName + ";" + dataType + ";" + nullable + "\r\n");
+                        SqlTableCol tableCol = new SqlTableCol();
+                        tableCol.name = colName;
+                        tableCol.datatype = dataType;
+                        tableCol.nullable = nullable;
+                        table.sqlTableColumns.Add(tableCol);
                     }
-
-                    
+                    tables.Add(table);
                 }
             }
 
-            this.csv = csv;
+
+
+
+            return tables;
+        }
+
+
+        private string createCsv(List<SqlTable> tables)
+        {
+            string csv = String.Empty;
+
+            foreach (SqlTable table in tables)
+            {
+                csv += (table.name + "\r\n");
+                csv += ("Name;Type;Nullable" + "\r\n");
+                foreach (SqlTableCol col in table.sqlTableColumns)
+                {
+                    csv += (String.Format("{0};{1};{2}", col.name, col.datatype, col.nullable) + "\r\n");
+                }
+            }
+
             return csv;
         }
 
@@ -122,7 +145,7 @@ namespace DatabaseDocumentationGenerator
             if (textboxCsv.Text != String.Empty)
             {
                 PdfGenerator pdfGenerator = new PdfGenerator();
-                byte[] pdf = pdfGenerator.generatePdfOutOfCsv(this.csv);
+                byte[] pdf = pdfGenerator.generateCatalogPdf(this.tables);
 
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Filter = "pdf files (*.pdf)|*.pdf|All files (*.*)|*.*";
