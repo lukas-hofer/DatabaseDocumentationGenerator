@@ -57,4 +57,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label4.Text" xml:space="preserve">
+    <value>1. Select your *.sql file with CREATE TABLE statements in the "import Script" tab
+2. You can now export your Data Catalog in the "Data Catalog" Tab either as .csv or .pdf
+3. You can also export a Relation Schema in the "Relation Schema" Tab</value>
+  </data>
 </root>

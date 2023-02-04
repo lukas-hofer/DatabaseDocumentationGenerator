@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DatabaseDocumentationGenerator));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.importScript = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -43,6 +44,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.buttonCsvToPdf = new System.Windows.Forms.Button();
             this.textboxCsv = new System.Windows.Forms.TextBox();
+            this.relationSchema = new System.Windows.Forms.TabPage();
+            this.about = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.importScript.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -50,6 +57,8 @@
             this.DataCatalog.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.about.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -59,6 +68,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.importScript);
             this.tabControl1.Controls.Add(this.DataCatalog);
+            this.tabControl1.Controls.Add(this.relationSchema);
+            this.tabControl1.Controls.Add(this.about);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -72,7 +83,7 @@
             this.importScript.Name = "importScript";
             this.importScript.Size = new System.Drawing.Size(794, 421);
             this.importScript.TabIndex = 1;
-            this.importScript.Text = "importScript";
+            this.importScript.Text = "import Script";
             this.importScript.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel4
@@ -147,6 +158,7 @@
             this.textboxCreateScripts.Name = "textboxCreateScripts";
             this.textboxCreateScripts.PlaceholderText = "import SQL Script";
             this.textboxCreateScripts.ReadOnly = true;
+            this.textboxCreateScripts.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textboxCreateScripts.Size = new System.Drawing.Size(782, 349);
             this.textboxCreateScripts.TabIndex = 7;
             // 
@@ -158,7 +170,7 @@
             this.DataCatalog.Padding = new System.Windows.Forms.Padding(3);
             this.DataCatalog.Size = new System.Drawing.Size(794, 421);
             this.DataCatalog.TabIndex = 0;
-            this.DataCatalog.Text = "DataCatalog";
+            this.DataCatalog.Text = "Data Catalog";
             this.DataCatalog.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel1
@@ -168,15 +180,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textboxCsv, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.textboxCsv, 0, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 418);
             this.tableLayoutPanel1.TabIndex = 4;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
@@ -238,12 +249,79 @@
             this.textboxCsv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textboxCsv.Location = new System.Drawing.Point(3, 63);
+            this.textboxCsv.Location = new System.Drawing.Point(3, 43);
             this.textboxCsv.Multiline = true;
             this.textboxCsv.Name = "textboxCsv";
             this.textboxCsv.ReadOnly = true;
-            this.textboxCsv.Size = new System.Drawing.Size(778, 352);
+            this.textboxCsv.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textboxCsv.Size = new System.Drawing.Size(778, 372);
             this.textboxCsv.TabIndex = 6;
+            // 
+            // relationSchema
+            // 
+            this.relationSchema.Location = new System.Drawing.Point(4, 24);
+            this.relationSchema.Name = "relationSchema";
+            this.relationSchema.Size = new System.Drawing.Size(794, 421);
+            this.relationSchema.TabIndex = 2;
+            this.relationSchema.Text = "Relation Schema";
+            this.relationSchema.UseVisualStyleBackColor = true;
+            // 
+            // about
+            // 
+            this.about.Controls.Add(this.tableLayoutPanel5);
+            this.about.Location = new System.Drawing.Point(4, 24);
+            this.about.Name = "about";
+            this.about.Size = new System.Drawing.Size(794, 421);
+            this.about.TabIndex = 3;
+            this.about.Text = "About";
+            this.about.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Controls.Add(this.label4, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.label3, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.label5, 0, 2);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 3);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 3;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(794, 418);
+            this.tableLayoutPanel5.TabIndex = 0;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 40);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(465, 45);
+            this.label4.TabIndex = 1;
+            this.label4.Text = resources.GetString("label4.Text");
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(123, 30);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "How to use";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 378);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(119, 15);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "made by Lukas Hofer";
             // 
             // DatabaseDocumentationGenerator
             // 
@@ -264,6 +342,9 @@
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.about.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -285,5 +366,11 @@
         private Label label1;
         private TextBox textboxCreateScripts;
         private Label insertFileName;
+        private TabPage relationSchema;
+        private TabPage about;
+        private TableLayoutPanel tableLayoutPanel5;
+        private Label label3;
+        private Label label4;
+        private Label label5;
     }
 }
