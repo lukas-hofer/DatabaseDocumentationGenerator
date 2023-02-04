@@ -1,3 +1,5 @@
+using System.Diagnostics.Metrics;
+
 namespace DatabaseDocumentationGenerator
 {
     public partial class DatabaseDocumentationGenerator : Form
@@ -149,6 +151,28 @@ namespace DatabaseDocumentationGenerator
 
         }
 
+        private string generateRelationSchema(List<SqlTable> tables)
+        {
+            string schema = String.Empty;
+
+            foreach (SqlTable table in tables)
+            {
+                schema += (table.name + " (");
+                
+                foreach (SqlTableCol col in table.sqlTableColumns)
+                {
+                    schema += (String.Format("{0}", col.name) + ", ");
+                }
+                
+                schema = schema.Remove(schema.Length - 2);
+                schema += ")\r\n";
+            }
+
+
+            return schema;
+
+        }
+
         private void openCreateScriptFile_Click_1(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -167,6 +191,7 @@ namespace DatabaseDocumentationGenerator
 
                 this.tables = convertCreateScripts(createScriptsSql);
                 textboxCsv.Text = createCsv(this.tables);
+                textboxRelationSchema.Text = generateRelationSchema(this.tables);
             }
         }
     }
