@@ -1,4 +1,4 @@
-# DatabaseDocumentationGenerator
+# Database Documentation Generator
 
 ## Features:
 - Generate Data Catalog
