@@ -46,7 +46,7 @@ namespace DatabaseDocumentationGenerator
                 //create Statement
                 if (line.StartsWith("CREATE TABLE"))
                 {
-                    string tableName = line.Split("CREATE TABLE ")[1].Split(" ")[0];
+                    string tableName = line.ToUpper().Split("CREATE TABLE ")[1].Split(" ")[0].Split("(")[0];
 
                     SqlTable table = new SqlTable();
                     table.name = tableName;
