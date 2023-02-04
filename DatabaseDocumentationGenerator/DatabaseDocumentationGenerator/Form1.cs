@@ -12,27 +12,7 @@ namespace DatabaseDocumentationGenerator
 
         private void openCreateScriptFile_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                string[] createScriptsSql = File.ReadAllText(openFileDialog.FileName).Replace("\r\n","").Split(";");
 
-
-                textboxCreateScripts.Text = String.Empty;
-                foreach (string line in createScriptsSql)
-                {
-                    textboxCreateScripts.Text += (line) + "\r\n";
-                }
-
-                insertFileName.Text = openFileDialog.FileName;
-                
-                this.tables = convertCreateScripts(createScriptsSql);
-                textboxCsv.Text = createCsv(this.tables);
-            }
-
-            
-
-            
 
         }
 
@@ -162,6 +142,32 @@ namespace DatabaseDocumentationGenerator
 
 
 
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void openCreateScriptFile_Click_1(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string[] createScriptsSql = File.ReadAllText(openFileDialog.FileName).Replace("\r\n", "").Split(";");
+
+
+                textboxCreateScripts.Text = String.Empty;
+                foreach (string line in createScriptsSql)
+                {
+                    textboxCreateScripts.Text += (line) + "\r\n";
+                }
+
+                insertFileName.Text = openFileDialog.FileName;
+
+                this.tables = convertCreateScripts(createScriptsSql);
+                textboxCsv.Text = createCsv(this.tables);
+            }
         }
     }
 }
