@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrayNotify;
 using Orientation = DinkToPdf.Orientation;
 
 namespace DatabaseDocumentationGenerator
@@ -45,15 +46,23 @@ namespace DatabaseDocumentationGenerator
 	            <!DOCTYPE html>
 	            <head>
 		            <style>
-		               table, th, td {{
-                           border: 1px solid;
-                        }} 
                         table {{
-                              border-collapse: collapse;
+                          font-family: Arial, sans-serif;
+                          border-collapse: collapse;
+                          width: 100%;
                         }}
+
                         td, th {{
-                          padding: 5px;             
+                           border: 1px solid #dddddd;
+                              text-align: left;
+                              padding: 8px;             
                        }}
+
+                        body {{
+                            font-family: Arial, sans-serif;                      
+                        }}
+
+
 		            </style>
 	            </head>
 	            <body>
