@@ -1,5 +1,7 @@
 # Database Documentation Generator
 
+# Works best for SQL Files generated with Visual Paradigm
+
 ## Features:
 - Generate Data Catalog
   - Export as CSV
